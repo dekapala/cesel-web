@@ -93,6 +93,63 @@
   color: transparent;
 }
 
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.22;
+  will-change: transform;
+}
+
+.ambient-blob-a {
+  top: 8%;
+  left: 6%;
+  width: 46vw;
+  height: 46vw;
+  background: radial-gradient(circle, var(--accent-a), transparent 70%);
+  animation: drift-a 26s ease-in-out infinite alternate;
+}
+
+.ambient-blob-b {
+  top: 38%;
+  right: 4%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, var(--accent-b), transparent 70%);
+  animation: drift-b 32s ease-in-out infinite alternate;
+}
+
+.ambient-blob-c {
+  bottom: 4%;
+  left: 30%;
+  width: 34vw;
+  height: 34vw;
+  background: radial-gradient(circle, var(--accent-a), var(--accent-b) 60%, transparent 75%);
+  opacity: 0.14;
+  animation: drift-c 40s ease-in-out infinite alternate;
+}
+
+@keyframes drift-a {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(6vw, 8vh) scale(1.15); }
+}
+
+@keyframes drift-b {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-8vw, -6vh) scale(0.9); }
+}
+
+@keyframes drift-c {
+  from { transform: translate(-4vw, 0) scale(1); }
+  to { transform: translate(5vw, -5vh) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blob {
+    animation: none;
+  }
+}
+
 .noise-overlay {
   position: fixed;
   inset: 0;

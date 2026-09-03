@@ -22,14 +22,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-[var(--bg)]"
+      className="relative flex min-h-[100svh] w-full flex-col overflow-hidden"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[70vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[120px]"
-        style={{ background: "var(--accent-gradient)" }}
-      />
-
       <div className="relative z-10 flex items-center justify-between px-[var(--edge)] pt-8">
         <span className="font-mono text-[0.95rem] tracking-tight">
           <span className="text-gradient">&gt;_</span> Cisel
