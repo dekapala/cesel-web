@@ -24,16 +24,7 @@ export function Hero() {
       id="home"
       className="relative flex min-h-[100svh] w-full flex-col overflow-hidden"
     >
-      <div className="relative z-10 flex items-center justify-between px-[var(--edge)] pt-8">
-        <span className="font-mono text-[0.95rem] tracking-tight">
-          <span className="text-gradient">&gt;_</span> Cisel
-        </span>
-        <span className="hidden font-mono text-xs text-[var(--text-muted)] sm:block">
-          Ingeniería &amp; Diseño Digital
-        </span>
-      </div>
-
-      <div className="relative z-10 grid flex-1 grid-cols-1 items-center gap-10 px-[var(--edge)] py-12 lg:grid-cols-[30%_1fr_25%] lg:gap-4">
+      <div className="relative z-10 grid flex-1 grid-cols-1 items-center gap-10 px-[var(--edge)] pb-12 pt-28 lg:grid-cols-[30%_1fr_25%] lg:gap-4">
         <motion.div
           variants={reduceMotion ? undefined : container}
           initial={reduceMotion ? undefined : "hidden"}

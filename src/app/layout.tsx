@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Syne, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { HashScrollSync } from "@/components/providers/HashScrollSync";
 import { Cursor } from "@/components/ui/Cursor";
 import { AmbientBackground } from "@/components/background/AmbientBackground";
+import { Navbar } from "@/components/layout/Navbar";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -33,6 +35,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <AmbientBackground />
           <div className="noise-overlay" />
           <Cursor />
+          <Navbar />
+          <HashScrollSync />
           {children}
         </SmoothScrollProvider>
       </body>

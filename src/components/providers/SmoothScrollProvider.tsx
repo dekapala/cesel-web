@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { ReactLenis, useLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,11 +16,25 @@ export function SmoothScrollProvider({
   children: React.ReactNode;
 }) {
   const lenis = useLenis();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!lenis) return;
     lenis.on("scroll", ScrollTrigger.update);
   }, [lenis]);
+
+  useEffect(() => {
+    if (!lenis) return;
+    // Lenis caches its scrollable limit at construction; since it lives in
+    // the root layout it never re-initializes on client-side navigation, so
+    // after a route change it's still clamped to the previous page's height
+    // until told to re-measure.
+    const raf = requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+      lenis.resize();
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [lenis, pathname]);
 
   useEffect(() => {
     gsap.ticker.add((time) => {

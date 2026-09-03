@@ -119,7 +119,7 @@ export function Methodology() {
               right: node.align === "right" ? "0" : "auto",
             }}
           >
-            <div className="rounded-3xl border border-[var(--glass-border)] bg-[var(--glass-bg)] p-6 backdrop-blur-md">
+            <div className="rounded-3xl border border-[var(--glass-border)] bg-[var(--bg)]/90 p-6 backdrop-blur-md">
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--accent-a)]">
                 {node.label}
               </p>
