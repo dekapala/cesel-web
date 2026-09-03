@@ -19,6 +19,7 @@
   /* ════ TYPOGRAPHY ════ */
   --font-heading: var(--font-syne);
   --font-mono: var(--font-geist-mono);
+  --font-body: var(--font-geist-sans);
 
   --fs-hero: clamp(2.25rem, 3.6vw, 3.75rem);
   --fs-h2: clamp(1.75rem, 3.2vw, 2.75rem);
@@ -44,6 +45,7 @@
 
   --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
+  --font-body: var(--font-body);
 }
 
 @layer base {
@@ -84,6 +86,10 @@
 
 .font-heading {
   font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
 
 .text-gradient {

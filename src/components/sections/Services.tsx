@@ -83,7 +83,7 @@ export function Services() {
                     <h3 className="mt-4 font-heading text-2xl font-bold leading-tight md:text-4xl">
                       {service.headline}
                     </h3>
-                    <p className="mt-4 max-w-md text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
+                    <p className="font-body mt-4 max-w-md text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
                       {service.body}
                     </p>
                   </div>

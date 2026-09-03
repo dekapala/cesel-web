@@ -49,7 +49,7 @@ export function ExpertiseTimeline() {
         <h1 className="mt-3 max-w-3xl font-heading text-[var(--fs-hero)] font-bold leading-[1.05]">
           Construimos con estándares de grado de telecomunicaciones.
         </h1>
-        <p className="mt-5 max-w-xl text-[var(--fs-body)] leading-relaxed text-[var(--text-muted)]">
+        <p className="font-body mt-5 max-w-xl text-[var(--fs-body)] leading-relaxed text-[var(--text-muted)]">
           No decimos solamente &ldquo;desarrollamos software&rdquo;. Explicamos
           cómo lo construimos, lo aseguramos y lo escalamos.
         </p>
@@ -109,7 +109,7 @@ export function ExpertiseTimeline() {
                 <h3 className="mt-4 font-heading text-xl font-bold md:text-2xl">
                   {pillar.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
+                <p className="font-body mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
                   {pillar.summary}
                 </p>
                 <ul className="mt-4 flex flex-col gap-2">

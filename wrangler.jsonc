@@ -1,0 +1,32 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "cisel",
+	"compatibility_date": "2026-09-03",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			// Self-reference service binding, required for ISR/on-demand revalidation.
+			// The service name must match "name" above.
+			// See https://opennext.js.org/cloudflare/caching
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "cisel"
+		}
+	],
+	"r2_buckets": [
+		// Incremental cache (ISR/data cache) storage, so `next build` output and
+		// revalidated pages persist between deploys instead of rebuilding from
+		// scratch every time.
+		// Create the bucket once before the first deploy:
+		//   npx wrangler r2 bucket create cisel-opennext-cache
+		// See https://opennext.js.org/cloudflare/caching
+		{
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "cisel-opennext-cache"
+		}
+	]
+}

@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { CASE_STUDIES } from "@/lib/data/work";
+import { AbstractPlaceholder } from "@/components/ui/AbstractPlaceholder";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -19,7 +19,7 @@ export function WorkShowcase() {
         <h1 className="mt-3 max-w-3xl font-heading text-[var(--fs-hero)] font-bold leading-[1.05]">
           Arquitectura, no capturas de pantalla.
         </h1>
-        <p className="mt-5 max-w-xl text-[var(--fs-body)] leading-relaxed text-[var(--text-muted)]">
+        <p className="font-body mt-5 max-w-xl text-[var(--fs-body)] leading-relaxed text-[var(--text-muted)]">
           Cada proyecto es un caso de ingeniería: desafío de negocio, decisiones
           de arquitectura y las métricas que efectivamente se movieron.
         </p>
@@ -46,12 +46,9 @@ export function WorkShowcase() {
                   i % 2 === 1 ? "md:order-2" : "md:order-1"
                 }`}
               >
-                <Image
-                  src={cs.image}
-                  alt={cs.name}
-                  fill
-                  sizes="(min-width: 768px) 45vw, 90vw"
-                  className="object-cover grayscale transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                <AbstractPlaceholder
+                  seed={cs.image}
+                  className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent opacity-70" />
               </motion.div>
@@ -66,7 +63,7 @@ export function WorkShowcase() {
                 <h2 className="mt-3 font-heading text-2xl font-bold leading-tight md:text-4xl">
                   {cs.name}
                 </h2>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
+                <p className="font-body mt-4 max-w-md text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
                   {cs.challenge}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">

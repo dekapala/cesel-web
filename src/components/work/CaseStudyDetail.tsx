@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import type { CaseStudy } from "@/lib/data/work";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { AbstractPlaceholder } from "@/components/ui/AbstractPlaceholder";
 import { CONTACT_HREF } from "@/lib/nav";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -15,14 +15,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
         layoutId={`image-${cs.slug}`}
         className="relative aspect-[16/9] w-full overflow-hidden rounded-[2rem]"
       >
-        <Image
-          src={cs.image}
-          alt={cs.name}
-          fill
-          sizes="90vw"
-          priority
-          className="object-cover grayscale"
-        />
+        <AbstractPlaceholder seed={cs.image} className="absolute inset-0" />
       </motion.div>
 
       <motion.div
@@ -57,7 +50,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--text-muted)]">
             El Desafío
           </h2>
-          <p className="mt-3 max-w-2xl leading-relaxed text-[var(--text)]">
+          <p className="font-body mt-3 max-w-2xl leading-relaxed text-[var(--text)]">
             {cs.challenge}
           </p>
         </div>
@@ -70,7 +63,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
             {cs.architecture.map((point, i) => (
               <li
                 key={i}
-                className="flex gap-3 text-sm leading-relaxed text-[var(--text-muted)] md:text-base"
+                className="font-body flex gap-3 text-sm leading-relaxed text-[var(--text-muted)] md:text-base"
               >
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent-a)]" />
                 {point}
@@ -93,13 +86,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {cs.gallery.map((src) => (
             <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image
-                src={src}
-                alt=""
-                fill
-                sizes="30vw"
-                className="object-cover grayscale"
-              />
+              <AbstractPlaceholder seed={src} className="absolute inset-0" />
             </div>
           ))}
         </div>

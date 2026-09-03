@@ -36,11 +36,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Onboarding clínico", value: "< 48h" },
       { label: "Zonas redundantes", value: "3" },
     ],
-    image: "https://picsum.photos/seed/medily-hero/1600/1000?grayscale",
+    image: "medily-hero",
     gallery: [
-      "https://picsum.photos/seed/medily-1/900/700?grayscale",
-      "https://picsum.photos/seed/medily-2/900/700?grayscale",
-      "https://picsum.photos/seed/medily-3/900/700?grayscale",
+      "medily-1",
+      "medily-2",
+      "medily-3",
     ],
   },
   {
@@ -65,11 +65,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Uptime en vivo", value: "99.97%" },
       { label: "Updates concurrentes", value: "3.2k/min" },
     ],
-    image: "https://picsum.photos/seed/ops-hero/1600/1000?grayscale",
+    image: "ops-hero",
     gallery: [
-      "https://picsum.photos/seed/ops-1/900/700?grayscale",
-      "https://picsum.photos/seed/ops-2/900/700?grayscale",
-      "https://picsum.photos/seed/ops-3/900/700?grayscale",
+      "ops-1",
+      "ops-2",
+      "ops-3",
     ],
   },
   {
@@ -94,11 +94,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Downtime en migración", value: "0h" },
       { label: "Tiempo de despliegue", value: "-70%" },
     ],
-    image: "https://picsum.photos/seed/hospitality-hero/1600/1000?grayscale",
+    image: "hospitality-hero",
     gallery: [
-      "https://picsum.photos/seed/hospitality-1/900/700?grayscale",
-      "https://picsum.photos/seed/hospitality-2/900/700?grayscale",
-      "https://picsum.photos/seed/hospitality-3/900/700?grayscale",
+      "hospitality-1",
+      "hospitality-2",
+      "hospitality-3",
     ],
   },
 ];

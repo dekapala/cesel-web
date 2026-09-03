@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useCoarsePointer } from "@/lib/useCoarsePointer";
 
 const RING_SIZE = 18;
 const RING_SIZE_HOVER = 46;
 
 export function Cursor() {
+  const coarse = useCoarsePointer();
+  const enabled = !coarse;
   const [hovering, setHovering] = useState(false);
   const [label, setLabel] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
@@ -17,6 +20,11 @@ export function Cursor() {
   const springY = useSpring(y, { damping: 22, stiffness: 320, mass: 0.4 });
 
   useEffect(() => {
+    // Coarse pointers (touch) get no benefit from a custom cursor and it's
+    // pure wasted listener/render overhead there — including on large
+    // touchscreens that would otherwise clear a `md` viewport check.
+    if (!enabled) return;
+
     const move = (e: PointerEvent) => {
       if (!ready) setReady(true);
       x.set(e.clientX);
@@ -37,7 +45,9 @@ export function Cursor() {
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerover", over);
     };
-  }, [ready, x, y]);
+  }, [enabled, ready, x, y]);
+
+  if (!enabled) return null;
 
   return (
     <motion.div

@@ -126,7 +126,7 @@ export function Methodology() {
               <h3 className="mt-2 font-heading text-xl font-bold md:text-2xl">
                 {node.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
+              <p className="font-body mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
                 {node.body}
               </p>
               <p className="mt-4 font-mono text-[0.65rem] tracking-wide text-[var(--text-muted)]">

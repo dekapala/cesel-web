@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, Geist_Mono } from "next/font/google";
+import { Syne, Geist_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { HashScrollSync } from "@/components/providers/HashScrollSync";
@@ -18,6 +18,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Cisel | Ingeniería & Diseño Digital",
   description:
@@ -28,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${syne.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${syne.variable} ${geistMono.variable} ${geistSans.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <SmoothScrollProvider>
